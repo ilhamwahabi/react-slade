@@ -1,0 +1,32 @@
+{
+  "name": "react-slade",
+  "version": "0.0.1",
+  "description": "Slideable react dialog of iterable component",
+  "main": "dist/index.js",
+  "author": "Ilham Wahabi",
+  "homepage": "https://github.com/manuverio/react-slade",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1"
+  },
+  "tags": [
+    "react",
+    "modal",
+    "dialog",
+    "slide"
+  ],
+  "keywords": [
+    "react",
+    "modal",
+    "dialog",
+    "slide",
+    "react-component"
+  ]
+}
