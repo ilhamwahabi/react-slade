@@ -17,11 +17,11 @@ $ npm install react-slade
 
 # API Documentation
 
-name | type | description | default
---- | --- | --- | ---
-open | boolean | defines the state when the Slade is open or not | false
-items | array | array of Component that will be slide-able | [ ]
-index | int | defines which Component is showed when the open become true | 1
+name | type | description 
+--- | --- | --- | 
+open | `boolean` | defines the state when the Slade is open or not 
+items | `array` | array of Component that will be slide-able 
+index | `int` | defines which Component is showed when the open become true
 
 # Usage
 
