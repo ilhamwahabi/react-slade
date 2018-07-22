@@ -12,6 +12,7 @@ class Slade extends Component {
 }
 
 Slade.propTypes = {
+  open: PropTypes.bool.isRequired,
   items: PropTypes.arrayOf(PropTypes.instanceOf(Component)).isRequired
 }
 
