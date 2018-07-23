@@ -1,18 +1,25 @@
 {
   "name": "react-slade",
-  "version": "0.0.8",
+  "version": "0.0.24",
   "description": "Slideable react dialog of iterable component",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "author": "Ilham Wahabi",
   "homepage": "https://github.com/manuverio/react-slade",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manuverio/react-slade"
+  },
   "license": "MIT",
   "files": [
+    "dist",
+    "lib",
+    "src",
     "build"
   ],
   "scripts": {
-    "start": "run-p build:watch lint:watch",
-    "build": "babel lib -d build",
-    "build:watch": "babel lib -w -d build",
+    "start": "webpack --watch --mode=production",
+    "build": "babel lib -d dist",
+    "build:watch": "babel lib -w -d dist",
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
     "prepare": "npm run build"
@@ -34,9 +41,13 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
     "babel-plugin-react-css-modules": "^3.4.2",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^1.0.0",
     "eslint": "^5.2.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
@@ -47,6 +58,10 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "styled-components": "^3.3.3"
+    "style-loader": "^0.21.0",
+    "styled-components": "^3.3.3",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   }
 }
