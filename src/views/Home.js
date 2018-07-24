@@ -10,11 +10,19 @@ class Home extends Component {
     index: 1
   }
 
+  openSlade = () => {
+    this.setState({ open: true })
+  }
+
+  closeSlade = () => {
+    this.setState({ open: false })
+  }
+
   render() {
     return (
       <Container>
-        <Button>Show Dialog</Button>
-        <Slade open={this.state.open} index={this.state.index} />
+        <Button onClick={this.openSlade}>Show Dialog</Button>
+        <Slade open={this.state.open} index={this.state.index} closeSlade={this.closeSlade} />
       </Container>
     )
   }

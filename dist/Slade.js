@@ -14,6 +14,18 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _StyledSlade = require('./elements/StyledSlade');
+
+var _StyledSlade2 = _interopRequireDefault(_StyledSlade);
+
+var _Backdrop = require('./elements/Backdrop');
+
+var _Backdrop2 = _interopRequireDefault(_Backdrop);
+
+var _Svg = require('./elements/Svg');
+
+var _Svg2 = _interopRequireDefault(_Svg);
+
 var _Direction = require('./elements/Direction');
 
 var _Direction2 = _interopRequireDefault(_Direction);
@@ -48,24 +60,38 @@ var Slade = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        { className: 'slade', style: Slade.defaultStyles },
-        'I\'m slade',
-        _react2.default.createElement(_Direction2.default, null),
-        _react2.default.createElement(_Dialog2.default, null),
-        _react2.default.createElement(_Direction2.default, null)
+        _react.Fragment,
+        null,
+        _react2.default.createElement(_Backdrop2.default, null),
+        _react2.default.createElement(
+          _StyledSlade2.default,
+          null,
+          _react2.default.createElement(
+            _Direction2.default,
+            { start: true },
+            _react2.default.createElement(
+              _Svg2.default,
+              { width: '100', height: '60' },
+              _react2.default.createElement('polyline', { points: '80 3, 50 28, 80 53' })
+            )
+          ),
+          _react2.default.createElement(_Dialog2.default, null),
+          _react2.default.createElement(
+            _Direction2.default,
+            { end: true },
+            _react2.default.createElement(
+              _Svg2.default,
+              { width: '100', height: '60' },
+              _react2.default.createElement('polyline', { points: '20 3, 50 28, 20 53' })
+            )
+          )
+        )
       );
     }
   }]);
 
   return Slade;
 }(_react.Component);
-
-Slade.defaultStyles = {
-  color: "blue",
-  fontSize: "20px"
-};
-
 
 Slade.propTypes = {
   open: _propTypes2.default.bool,
