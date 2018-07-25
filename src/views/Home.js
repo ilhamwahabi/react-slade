@@ -36,7 +36,7 @@ class Home extends Component {
   render() {
     return (
       <Container>
-        <Button onClick={this.openSlade}>Show Dialog</Button>
+        <Button onClick={this.openSlade}>Show Basic Slade</Button>
         <Slade 
           items={this.state.items} 
           open={this.state.open} 
