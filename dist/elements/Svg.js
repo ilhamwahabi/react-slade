@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(["\n  stroke: white;\n  stroke-width: 5;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  fill: none;\n"], ["\n  stroke: white;\n  stroke-width: 5;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  fill: none;\n"]);
+var _templateObject = _taggedTemplateLiteral(["\n  display: inherit;\n  stroke: white;\n  stroke-width: 5;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  fill: none;\n  cursor: pointer;\n"], ["\n  display: inherit;\n  stroke: white;\n  stroke-width: 5;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  fill: none;\n  cursor: pointer;\n"]);
 
 var _styledComponents = require("styled-components");
 

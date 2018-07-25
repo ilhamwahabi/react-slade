@@ -62,23 +62,29 @@ var Slade = function (_Component) {
       return _react2.default.createElement(
         _react.Fragment,
         null,
-        _react2.default.createElement(_Backdrop2.default, null),
+        _react2.default.createElement(_Backdrop2.default, { open: this.props.open }),
         _react2.default.createElement(
           _StyledSlade2.default,
-          null,
+          { onClick: this.props.closeSlade, open: this.props.open },
           _react2.default.createElement(
             _Direction2.default,
-            { start: true },
+            { onClick: function onClick(e) {
+                return e.stopPropagation();
+              }, start: 1 },
             _react2.default.createElement(
               _Svg2.default,
               { width: '100', height: '60' },
               _react2.default.createElement('polyline', { points: '80 3, 50 28, 80 53' })
             )
           ),
-          _react2.default.createElement(_Dialog2.default, null),
+          _react2.default.createElement(_Dialog2.default, { onClick: function onClick(e) {
+              return e.stopPropagation();
+            } }),
           _react2.default.createElement(
             _Direction2.default,
-            { end: true },
+            { end: 1, onClick: function onClick(e) {
+                return e.stopPropagation();
+              } },
             _react2.default.createElement(
               _Svg2.default,
               { width: '100', height: '60' },

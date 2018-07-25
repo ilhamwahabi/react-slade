@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  max-width: 20%;\n  max-height: 20%;\n  animation: ', ' 1s ease-out infinite;\n'], ['\n  max-width: 20%;\n  max-height: 20%;\n  animation: ', ' 1s ease-out infinite;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: inherit;\n  max-width: 20%;\n  max-height: 20%;\n  animation: ', ' 1s ease-out infinite;\n'], ['\n  display: inherit;\n  max-width: 20%;\n  max-height: 20%;\n  animation: ', ' 1s ease-out infinite;\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -17,7 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Direction = _styledComponents2.default.div(_templateObject, function (props) {
-  return props.start ? _shake.shakeRight : _shake.shakeLeft;
+  return props.start ? _shake.shakeRight.toString() : _shake.shakeLeft.toString();
 });
 
 exports.default = Direction;
