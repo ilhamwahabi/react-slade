@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: fixed;\n  height: 100%;\n  width: 100%;\n  color: black;\n  font-size: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  z-index: ', ';\n  opacity: ', ';\n  animation: ', ' .2s ease-out 1;\n\n  @media (max-width: 481px) {\n    flex-direction: column;\n  }\n'], ['\n  position: fixed;\n  height: 100%;\n  width: 100%;\n  color: black;\n  font-size: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  z-index: ', ';\n  opacity: ', ';\n  animation: ', ' .2s ease-out 1;\n\n  @media (max-width: 481px) {\n    flex-direction: column;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  position: fixed;\n  height: 100%;\n  width: 100%;\n  color: black;\n  font-size: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  z-index: ', ';\n  opacity: ', ';\n  animation-name: ', ';\n  animation-duration: .3s;\n  animation-timing-function: ease-out;\n  animation-iteration-count: 1;\n\n  @media (max-width: 481px) {\n    flex-direction: column;\n  }\n'], ['\n  position: fixed;\n  height: 100%;\n  width: 100%;\n  color: black;\n  font-size: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  z-index: ', ';\n  opacity: ', ';\n  animation-name: ', ';\n  animation-duration: .3s;\n  animation-timing-function: ease-out;\n  animation-iteration-count: 1;\n\n  @media (max-width: 481px) {\n    flex-direction: column;\n  }\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -25,4 +25,3 @@ var StyledSlade = _styledComponents2.default.main(_templateObject, function (pro
 });
 
 exports.default = StyledSlade;
-// display: ${props => props.open ? 'flex' : 'none'};

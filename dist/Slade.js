@@ -4,8 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -36,74 +34,65 @@ var _Dialog2 = _interopRequireDefault(_Dialog);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Slade = function (_Component) {
-  _inherits(Slade, _Component);
-
-  function Slade(props) {
-    _classCallCheck(this, Slade);
-
-    var _this = _possibleConstructorReturn(this, (Slade.__proto__ || Object.getPrototypeOf(Slade)).call(this, props));
-
-    _this.state = {
-      currentIndex: props.index
-    };
-    return _this;
-  }
-
-  _createClass(Slade, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        _react.Fragment,
-        null,
-        _react2.default.createElement(_Backdrop2.default, { open: this.props.open }),
+var Slade = function Slade(_ref) {
+  var open = _ref.open,
+      items = _ref.items,
+      index = _ref.index,
+      closeSlade = _ref.closeSlade,
+      nextSlade = _ref.nextSlade,
+      previousSlade = _ref.previousSlade;
+  return _react2.default.createElement(
+    _react.Fragment,
+    null,
+    _react2.default.createElement(_Backdrop2.default, { open: open }),
+    _react2.default.createElement(
+      _StyledSlade2.default,
+      { onClick: closeSlade, open: open },
+      _react2.default.createElement(
+        _Direction2.default,
+        { start: 1, onClick: function onClick(e) {
+            e.stopPropagation();previousSlade();
+          } },
         _react2.default.createElement(
-          _StyledSlade2.default,
-          { onClick: this.props.closeSlade, open: this.props.open },
-          _react2.default.createElement(
-            _Direction2.default,
-            { onClick: function onClick(e) {
-                return e.stopPropagation();
-              }, start: 1 },
-            _react2.default.createElement(
-              _Svg2.default,
-              { start: 1, width: '100', height: '60' },
-              _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' })
-            )
-          ),
-          _react2.default.createElement(_Dialog2.default, { onClick: function onClick(e) {
-              return e.stopPropagation();
-            } }),
-          _react2.default.createElement(
-            _Direction2.default,
-            { end: 1, onClick: function onClick(e) {
-                return e.stopPropagation();
-              } },
-            _react2.default.createElement(
-              _Svg2.default,
-              { end: 1, width: '100', height: '60' },
-              _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' })
-            )
-          )
+          _Svg2.default,
+          { start: 1, width: '100', height: '60' },
+          _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' })
         )
-      );
-    }
-  }]);
+      ),
+      _react2.default.createElement(
+        _Dialog2.default,
+        { onClick: function onClick(e) {
+            return e.stopPropagation();
+          } },
+        items[index]
+      ),
+      _react2.default.createElement(
+        _Direction2.default,
+        { end: 1, onClick: function onClick(e) {
+            e.stopPropagation();nextSlade();
+          } },
+        _react2.default.createElement(
+          _Svg2.default,
+          { end: 1, width: '100', height: '60' },
+          _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' })
+        )
+      )
+    )
+  );
+};
 
-  return Slade;
-}(_react.Component);
+// Internal Import
+// Eksternal Import
+
 
 Slade.propTypes = {
-  open: _propTypes2.default.bool,
-  items: _propTypes2.default.array,
-  index: _propTypes2.default.number,
-  closeSlade: _propTypes2.default.func
+  open: _propTypes2.default.bool.isRequired,
+  items: _propTypes2.default.array.isRequired,
+  index: _propTypes2.default.number.isRequired,
+
+  closeSlade: _propTypes2.default.func.isRequired,
+  nextSlade: _propTypes2.default.func.isRequired,
+  previousSlade: _propTypes2.default.func.isRequired
 };
 
 exports.default = Slade;

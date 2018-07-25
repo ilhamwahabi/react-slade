@@ -1,6 +1,13 @@
 # react-slade
 
-Slideable react dialog of iterable component.
+<div align="center">
+  <p>
+    Slideable react dialog of iterable component.  
+  </p>
+  <a href="https://www.manuver.io/lib/react-slade">
+    <img alt="react-slade" src="https://puu.sh/B2SKS/e665783b42.png" height="150px" />
+  </a>
+</div>
 
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
