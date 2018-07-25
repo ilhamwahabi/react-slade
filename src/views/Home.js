@@ -32,7 +32,7 @@ class Home extends Component {
           index={this.state.index} 
           closeSlade={this.closeSlade}
           nextSlade={this.nextSlade}
-          previousSlade={this.previousSlade} 
+          previousSlade={this.previousSlade}
         />
       </Container>
     )

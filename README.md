@@ -31,14 +31,15 @@ $ npm install react-slade@latest
 
 # API Documentation
 
-name | type | description 
---- | --- | --- | 
-open | `boolean` | defines the state when the Slade is open or not 
-items | `array` | array of Component that will be slide-able 
-index | `int` | defines which Component is showed when the open become true
-closeSlade | `function` | close active Slade with change the `open` to false
-nextSlade | `function` | increment current index of Slade
-previousSlade | `function` | decrement current index of Slade
+name | type | description | is required
+--- | --- | --- | ---
+open | `boolean` | defines the state when the Slade is open or not | `true`
+items | `array` | array of Component that will be slide-able | `true`
+index | `int` | defines which Component is showed when the open become true | `true`
+closeSlade | `function` | close active Slade with change the `open` to false | `true`
+nextSlade | `function` | increment current index of Slade | `true`
+previousSlade | `function` | decrement current index of Slade | `true`
+backdrop | `string` | you can put  `red`, `rgba(0,0,0,0.5)` or `https://bglink.com/` | `false`
 
 # Usage
 
