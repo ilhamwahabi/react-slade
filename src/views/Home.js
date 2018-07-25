@@ -26,15 +26,11 @@ class Home extends Component {
   }
 
   nextSlade = () => {
-    if (this.state.index + 1 !== this.state.items.length) {
-      this.setState({ index: this.state.index + 1 })
-    }
+    this.setState({ index: this.state.index + 1 })
   }
 
   previousSlade = () => {
-    if (this.state.index !== 0) {
-      this.setState({ index: this.state.index - 1 })
-    }
+    this.setState({ index: this.state.index - 1 })
   }
 
   render() {

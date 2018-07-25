@@ -68,15 +68,11 @@ class Home extends Component {
   }
 
   nextItem = () => {
-    if (this.state.index + 1 !== this.state.items.length) {
-      this.setState({ index: this.state.index + 1 })
-    }
+    this.setState({ index: this.state.index + 1 })
   }
 
   previousItem = () => {
-    if (this.state.index !== 0) {
-      this.setState({ index: this.state.index - 1 })
-    }
+    this.setState({ index: this.state.index - 1 })
   }
 
   render() {
