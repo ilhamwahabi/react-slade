@@ -1,6 +1,6 @@
 {
   "name": "react-slade",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Slideable react dialog of iterable component",
   "main": "dist/index.js",
   "author": "Ilham Wahabi",
@@ -23,7 +23,9 @@
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
     "produce": "babel lib -d dist",
-    "prepare": "npm run produce"
+    "prepare": "npm run produce",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "tags": [
     "react",
@@ -54,6 +56,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "eslint-watch": "^4.0.2",
+    "gh-pages": "^1.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "npm-run-all": "^4.1.3",

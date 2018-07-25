@@ -13,15 +13,20 @@
 
 ## Table of Contents
 
+* [Examples](#examples)
 * [Installation](#installation)
 * [API Documentation](#api-documentation)
 * [Usage](#usage)
+
+# Examples
+
+[react-slade examples page](https://manuverio.github.io/react-slade/)
 
 # Installation
 
 To install, you can use [npm](https://www.npmjs.com/package/react-slade):
 ```shell
-$ npm install react-slade
+$ npm install react-slade@latest
 ```
 
 # API Documentation
