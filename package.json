@@ -1,6 +1,6 @@
 {
   "name": "react-slade",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Slideable react dialog of iterable component",
   "main": "dist/index.js",
   "author": "Ilham Wahabi",

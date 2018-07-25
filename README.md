@@ -72,11 +72,11 @@ class Home extends Component {
     this.setState({ open: false })
   }
 
-  nextItem = () => {
+  nextSlade = () => {
     this.setState({ index: this.state.index + 1 })
   }
 
-  previousItem = () => {
+  previousSlade = () => {
     this.setState({ index: this.state.index - 1 })
   }
 
@@ -89,11 +89,13 @@ class Home extends Component {
           open={this.state.open} 
           index={this.state.index} 
           closeSlade={this.closeSlade}
-          nextItem={this.nextItem}
-          previousItem={this.previousItem} 
+          nextSlade={this.nextSlade}
+          previousSlade={this.previousSlade} 
         />
       </Container>
     )
   }
 }
 ```
+
+#### Card image credit to https://orig00.deviantart.net 

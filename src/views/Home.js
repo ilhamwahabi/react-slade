@@ -17,21 +17,10 @@ class Home extends Component {
     ]
   }
 
-  openSlade = () => {
-    this.setState({ open: true })
-  }
-
-  closeSlade = () => {
-    this.setState({ open: false })
-  }
-
-  nextSlade = () => {
-    this.setState({ index: this.state.index + 1 })
-  }
-
-  previousSlade = () => {
-    this.setState({ index: this.state.index - 1 })
-  }
+  openSlade = () => { this.setState({ open: true }) }
+  closeSlade = () => { this.setState({ open: false }) }
+  nextSlade = () => { this.setState({ index: this.state.index + 1 }) }
+  previousSlade = () => { this.setState({ index: this.state.index - 1 }) }
 
   render() {
     return (
