@@ -73,8 +73,8 @@ var Slade = function (_Component) {
               }, start: 1 },
             _react2.default.createElement(
               _Svg2.default,
-              { width: '100', height: '60' },
-              _react2.default.createElement('polyline', { points: '80 3, 50 28, 80 53' })
+              { start: 1, width: '100', height: '60' },
+              _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' })
             )
           ),
           _react2.default.createElement(_Dialog2.default, { onClick: function onClick(e) {
@@ -87,8 +87,8 @@ var Slade = function (_Component) {
               } },
             _react2.default.createElement(
               _Svg2.default,
-              { width: '100', height: '60' },
-              _react2.default.createElement('polyline', { points: '20 3, 50 28, 20 53' })
+              { end: 1, width: '100', height: '60' },
+              _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' })
             )
           )
         )
@@ -102,7 +102,8 @@ var Slade = function (_Component) {
 Slade.propTypes = {
   open: _propTypes2.default.bool,
   items: _propTypes2.default.array,
-  index: _propTypes2.default.number
+  index: _propTypes2.default.number,
+  closeSlade: _propTypes2.default.func
 };
 
 exports.default = Slade;
