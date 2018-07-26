@@ -83,7 +83,7 @@ var Slade = function (_Component) {
       return _react2.default.createElement(
         _react.Fragment,
         null,
-        _react2.default.createElement(_Backdrop2.default, { open: this.props.open }),
+        _react2.default.createElement(_Backdrop2.default, { backdrop: this.props.backdrop, open: this.props.open }),
         _react2.default.createElement(
           _StyledSlade2.default,
           { onClick: this.props.closeSlade, open: this.props.open },
@@ -124,10 +124,15 @@ var Slade = function (_Component) {
   return Slade;
 }(_react.Component);
 
+Slade.defaultProps = {
+  backdrop: 'rgba(0, 0, 0, 0.5)'
+};
+
 Slade.propTypes = {
   open: _propTypes2.default.bool.isRequired,
   items: _propTypes2.default.array.isRequired,
   index: _propTypes2.default.number.isRequired,
+  backdrop: _propTypes2.default.string,
 
   closeSlade: _propTypes2.default.func.isRequired,
   nextSlade: _propTypes2.default.func.isRequired,

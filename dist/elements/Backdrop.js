@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: fixed;\n  display: ', ';\n  height: 100%;\n  width: 100%;\n  z-index: 100;\n  background: rgba(0, 0, 0, 0.5);\n'], ['\n  position: fixed;\n  display: ', ';\n  height: 100%;\n  width: 100%;\n  z-index: 100;\n  background: rgba(0, 0, 0, 0.5);\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  position: fixed;\n  display: ', ';\n  height: 100%;\n  width: 100%;\n  z-index: 100;\n  ', ';\n'], ['\n  position: fixed;\n  display: ', ';\n  height: 100%;\n  width: 100%;\n  z-index: 100;\n  ', ';\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -16,6 +16,8 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var Backdrop = _styledComponents2.default.div(_templateObject, function (props) {
   return props.open ? 'block' : 'none';
+}, function (props) {
+  return props.backdrop.startsWith('http') ? 'background: url(' + props.backdrop + ') no-repeat center / cover' : 'background: ' + props.backdrop;
 });
 
 exports.default = Backdrop;

@@ -39,7 +39,8 @@ index | `int` | defines which Component is showed when the open become true | `t
 closeSlade | `function` | close active Slade with change the `open` to false | `true`
 nextSlade | `function` | increment current index of Slade | `true`
 previousSlade | `function` | decrement current index of Slade | `true`
-backdrop | `string` | you can put  `red`, `rgba(0,0,0,0.5)` or `https://bglink.com/` | `false`
+backdrop | `string` | you can put  `red`, `rgba(0,0,0,0.5)` or `https://example.com/bg.png/` | `false`
+rightArrow | `string` | you can put `svg component` or `https://example.com/arr.png/`, if you change right arrow, all arrow will automatically changed and got rotated | false 
 
 # Usage
 
