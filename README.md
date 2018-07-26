@@ -24,9 +24,10 @@
 
 # Installation
 
-To install, you can use [npm](https://www.npmjs.com/package/react-slade):
+To install, you can use [npm](https://www.npmjs.com/package/react-slade) and yarn:
 ```shell
 $ npm install react-slade
+or
 $ yarn add react-slade
 ```
 
