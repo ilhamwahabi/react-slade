@@ -101,7 +101,13 @@ var Slade = function (_Component) {
             { start: 1, onClick: function onClick(e) {
                 e.stopPropagation();_this2.previousSlade();
               } },
-            this.props.rightArrow ? _react2.default.createElement(_Image2.default, { isStartItem: this.isStartItem(), start: 1, src: this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
+            this.props.rightArrow ? this.props.rightArrow.startsWith('http') ? _react2.default.createElement(_Image2.default, { isStartItem: this.isStartItem(), start: 1, src: this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
+              _Svg2.default,
+              { isStartItem: this.isStartItem(), start: 1, width: '100', height: '60' },
+              ' ',
+              this.props.rightArrow,
+              ' '
+            ) : _react2.default.createElement(
               _Svg2.default,
               { isStartItem: this.isStartItem(), start: 1, width: '100', height: '60' },
               ' ',
@@ -121,7 +127,13 @@ var Slade = function (_Component) {
             { end: 1, onClick: function onClick(e) {
                 e.stopPropagation();_this2.nextSlade();
               } },
-            this.props.rightArrow ? _react2.default.createElement(_Image2.default, { isEndItem: this.isEndItem(), src: this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
+            this.props.rightArrow ? this.props.rightArrow.startsWith('http') ? _react2.default.createElement(_Image2.default, { isEndItem: this.isEndItem(), src: this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
+              _Svg2.default,
+              { isEndItem: this.isEndItem(), width: '100', height: '60' },
+              ' ',
+              this.props.rightArrow,
+              ' '
+            ) : _react2.default.createElement(
               _Svg2.default,
               { isEndItem: this.isEndItem(), width: '100', height: '60' },
               ' ',
