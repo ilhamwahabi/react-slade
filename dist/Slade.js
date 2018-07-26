@@ -26,6 +26,10 @@ var _Svg = require('./elements/Svg');
 
 var _Svg2 = _interopRequireDefault(_Svg);
 
+var _Image = require('./elements/Image');
+
+var _Image2 = _interopRequireDefault(_Image);
+
 var _Direction = require('./elements/Direction');
 
 var _Direction2 = _interopRequireDefault(_Direction);
@@ -46,6 +50,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // Internal Import
 
 
+var defaultArrow = _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' });
+
 var Slade = function (_Component) {
   _inherits(Slade, _Component);
 
@@ -65,13 +71,9 @@ var Slade = function (_Component) {
     }, _this.isEndItem = function () {
       return _this.props.index + 1 === _this.props.items.length;
     }, _this.previousSlade = function () {
-      if (!_this.isStartItem()) {
-        _this.props.previousSlade();
-      }
+      if (!_this.isStartItem()) _this.props.previousSlade();
     }, _this.nextSlade = function () {
-      if (!_this.isEndItem()) {
-        _this.props.nextSlade();
-      }
+      if (!_this.isEndItem()) _this.props.nextSlade();
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -80,22 +82,31 @@ var Slade = function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      var _props = this.props,
+          open = _props.open,
+          closeSlade = _props.closeSlade,
+          items = _props.items,
+          index = _props.index,
+          backdrop = _props.backdrop;
+
       return _react2.default.createElement(
         _react.Fragment,
         null,
-        _react2.default.createElement(_Backdrop2.default, { backdrop: this.props.backdrop, open: this.props.open }),
+        _react2.default.createElement(_Backdrop2.default, { backdrop: backdrop, open: open }),
         _react2.default.createElement(
           _StyledSlade2.default,
-          { onClick: this.props.closeSlade, open: this.props.open },
+          { onClick: closeSlade, open: open },
           _react2.default.createElement(
             _Direction2.default,
             { start: 1, onClick: function onClick(e) {
                 e.stopPropagation();_this2.previousSlade();
               } },
-            _react2.default.createElement(
+            this.props.rightArrow ? _react2.default.createElement(_Image2.default, { isStartItem: this.isStartItem(), start: 1, src: this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
               _Svg2.default,
               { isStartItem: this.isStartItem(), start: 1, width: '100', height: '60' },
-              _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' })
+              ' ',
+              defaultArrow,
+              ' '
             )
           ),
           _react2.default.createElement(
@@ -103,17 +114,19 @@ var Slade = function (_Component) {
             { onClick: function onClick(e) {
                 return e.stopPropagation();
               } },
-            this.props.items[this.props.index]
+            items[index]
           ),
           _react2.default.createElement(
             _Direction2.default,
             { end: 1, onClick: function onClick(e) {
                 e.stopPropagation();_this2.nextSlade();
               } },
-            _react2.default.createElement(
+            this.props.rightArrow ? _react2.default.createElement(_Image2.default, { isEndItem: this.isEndItem(), src: this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
               _Svg2.default,
-              { isEndItem: this.isEndItem(), end: 1, width: '100', height: '60' },
-              _react2.default.createElement('polyline', { points: '20 5, 50 30, 20 55' })
+              { isEndItem: this.isEndItem(), width: '100', height: '60' },
+              ' ',
+              defaultArrow,
+              ' '
             )
           )
         )
@@ -133,6 +146,7 @@ Slade.propTypes = {
   items: _propTypes2.default.array.isRequired,
   index: _propTypes2.default.number.isRequired,
   backdrop: _propTypes2.default.string,
+  rightArrow: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
 
   closeSlade: _propTypes2.default.func.isRequired,
   nextSlade: _propTypes2.default.func.isRequired,
