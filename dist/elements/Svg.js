@@ -19,7 +19,7 @@ var Svg = _styledComponents2.default.svg(_templateObject, function (props) {
 }, function (props) {
   return props.isStartItem || props.isEndItem ? 'initial' : 'pointer';
 }, function (props) {
-  return props.start ? 'scaleX(-1)' : 'scaleX(1)';
+  return props.start ? 'rotate(180deg)' : 'rotate(0)';
 }, function (props) {
   return props.start ? 'rotate(-90deg)' : 'rotate(90deg)';
 });

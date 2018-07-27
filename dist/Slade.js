@@ -30,9 +30,9 @@ var _Image = require('./elements/Image');
 
 var _Image2 = _interopRequireDefault(_Image);
 
-var _Direction = require('./elements/Direction');
+var _Arrow = require('./elements/Arrow');
 
-var _Direction2 = _interopRequireDefault(_Direction);
+var _Arrow2 = _interopRequireDefault(_Arrow);
 
 var _Dialog = require('./elements/Dialog');
 
@@ -74,6 +74,34 @@ var Slade = function (_Component) {
       if (!_this.isStartItem()) _this.props.previousSlade();
     }, _this.nextSlade = function () {
       if (!_this.isEndItem()) _this.props.nextSlade();
+    }, _this._renderStartArrow = function () {
+      return _this.props.rightArrow ? _this.props.rightArrow.startsWith('http') ? _react2.default.createElement(_Image2.default, { isStartItem: _this.isStartItem(), start: 1, src: _this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
+        _Svg2.default,
+        { isStartItem: _this.isStartItem(), start: 1, width: '100', height: '60' },
+        ' ',
+        _this.props.rightArrow,
+        ' '
+      ) : _react2.default.createElement(
+        _Svg2.default,
+        { isStartItem: _this.isStartItem(), start: 1, width: '100', height: '60' },
+        ' ',
+        defaultArrow,
+        ' '
+      );
+    }, _this._renderEndArrow = function () {
+      return _this.props.rightArrow ? _this.props.rightArrow.startsWith('http') ? _react2.default.createElement(_Image2.default, { isEndItem: _this.isEndItem(), src: _this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
+        _Svg2.default,
+        { isEndItem: _this.isEndItem(), width: '100', height: '60' },
+        ' ',
+        _this.props.rightArrow,
+        ' '
+      ) : _react2.default.createElement(
+        _Svg2.default,
+        { isEndItem: _this.isEndItem(), width: '100', height: '60' },
+        ' ',
+        defaultArrow,
+        ' '
+      );
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -97,23 +125,11 @@ var Slade = function (_Component) {
           _StyledSlade2.default,
           { onClick: closeSlade, open: open },
           _react2.default.createElement(
-            _Direction2.default,
+            _Arrow2.default,
             { start: 1, onClick: function onClick(e) {
                 e.stopPropagation();_this2.previousSlade();
               } },
-            this.props.rightArrow ? this.props.rightArrow.startsWith('http') ? _react2.default.createElement(_Image2.default, { isStartItem: this.isStartItem(), start: 1, src: this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
-              _Svg2.default,
-              { isStartItem: this.isStartItem(), start: 1, width: '100', height: '60' },
-              ' ',
-              this.props.rightArrow,
-              ' '
-            ) : _react2.default.createElement(
-              _Svg2.default,
-              { isStartItem: this.isStartItem(), start: 1, width: '100', height: '60' },
-              ' ',
-              defaultArrow,
-              ' '
-            )
+            this._renderStartArrow()
           ),
           _react2.default.createElement(
             _Dialog2.default,
@@ -123,23 +139,11 @@ var Slade = function (_Component) {
             items[index]
           ),
           _react2.default.createElement(
-            _Direction2.default,
+            _Arrow2.default,
             { end: 1, onClick: function onClick(e) {
                 e.stopPropagation();_this2.nextSlade();
               } },
-            this.props.rightArrow ? this.props.rightArrow.startsWith('http') ? _react2.default.createElement(_Image2.default, { isEndItem: this.isEndItem(), src: this.props.rightArrow, alt: 'arrow' }) : _react2.default.createElement(
-              _Svg2.default,
-              { isEndItem: this.isEndItem(), width: '100', height: '60' },
-              ' ',
-              this.props.rightArrow,
-              ' '
-            ) : _react2.default.createElement(
-              _Svg2.default,
-              { isEndItem: this.isEndItem(), width: '100', height: '60' },
-              ' ',
-              defaultArrow,
-              ' '
-            )
+            this._renderEndArrow()
           )
         )
       );

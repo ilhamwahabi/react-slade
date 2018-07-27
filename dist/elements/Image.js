@@ -17,7 +17,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var Image = _styledComponents2.default.img(_templateObject, function (props) {
   return props.isStartItem || props.isEndItem ? 'hidden' : 'visible';
 }, function (props) {
-  return props.start ? 'scaleX(-1)' : 'scale(1)';
+  return props.start ? 'rotate(180deg)' : 'rotate(0)';
 }, function (props) {
   return props.start ? 'rotate(-90deg)' : 'rotate(90deg)';
 });
