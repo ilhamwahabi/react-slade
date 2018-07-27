@@ -101,5 +101,3 @@ class Home extends Component {
   }
 }
 ```
-
-#### Card image credit to https://orig00.deviantart.net 
