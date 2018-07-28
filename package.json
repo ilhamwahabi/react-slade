@@ -1,7 +1,7 @@
 {
   "name": "react-slade",
-  "version": "1.4.8",
-  "description": "Slideable react dialog of iterable component",
+  "version": "1.4.9",
+  "description": "React dialog componet that slide-able",
   "main": "dist/index.js",
   "author": "Ilham Wahabi",
   "homepage": "https://github.com/manuverio/react-slade",

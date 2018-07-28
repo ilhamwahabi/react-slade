@@ -35,7 +35,7 @@ module.exports = {
           {
             loader: 'image-webpack-loader',
             options: {
-              disable: true, // webpack@2.x and newer
+              disable: true,
             },
           },
         ],

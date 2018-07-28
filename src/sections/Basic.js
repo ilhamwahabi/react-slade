@@ -1,19 +1,15 @@
 import React from 'react'
 import Container from '../components/Container'
-import Button from '../components/Button';
-import Slade from '../../lib/Slade'
+import Button from '../components/Button'
+import Row from '../components/Row';
+import Title from '../components/Title';
 
-const Basic = ({ items, open, index, openSlade, closeSlade, nextSlade, previousSlade }) => (
+const Basic = ({ openSlade }) => (
   <Container>
-    <Button onClick={openSlade}>Show Dragon Slade</Button>
-    <Slade 
-      items={items} 
-      open={open} 
-      index={index} 
-      closeSlade={closeSlade}
-      nextSlade={nextSlade}
-      previousSlade={previousSlade}
-    />
+    <Row center>
+      <Title>Default Configuration</Title>
+    </Row>
+    <Button onClick={() => openSlade('basic')}>Show Dragon Slade</Button>
   </Container>
 )
 

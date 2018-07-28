@@ -54,7 +54,6 @@ import Slade from 'react-slade'
 
 import Container from '../components/Container'
 import Button from '../components/Button';
-
 import Image from '../components/Dummy/Image'
 
 class Home extends Component {
@@ -87,7 +86,6 @@ class Home extends Component {
   render() {
     return (
       <Container>
-        <Button onClick={this.openSlade}>Show Dialog</Button>
         <Slade 
           items={this.state.items} 
           open={this.state.open} 
@@ -96,8 +94,14 @@ class Home extends Component {
           nextSlade={this.nextSlade}
           previousSlade={this.previousSlade} 
         />
+        <Button onClick={this.openSlade}>Show Dialog</Button>
       </Container>
     )
   }
 }
 ```
+
+# Current Problem
+1. You must put Slade component __above__ all items (look examples above)
+2. `backdrop` and `arrow` not support path yet
+3. Dont forget define dimension for you passed component items (media query is important too)
