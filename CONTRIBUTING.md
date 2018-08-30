@@ -5,6 +5,6 @@
 # The Example
 1. Please edit file inside the `src` folder
 2. And run `npm start`, that will open new window
-3. I don't recommend make new page for example, just made next section below the previous one
+3. I don't recommend make new page for new example, just made at next section below the previous one
 
 ### And, yup! I'm looking for maintainer :couple:

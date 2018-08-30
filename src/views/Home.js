@@ -3,7 +3,7 @@ import Slade from '../../lib/Slade';
 
 import Basic from '../sections/Basic';
 import Customized from '../sections/Customized';
-import Image from '../components/Dummy/Image';
+import Image from '../components/Image';
 
 import drastle1 from '../assets/drastle1.png';
 import drastle2 from '../assets/drastle2.png';
@@ -65,6 +65,8 @@ class Home extends Component {
 
     return (
       <Fragment>
+        <Basic openSlade={this.openSlade} />
+        <Customized openSlade={this.openSlade} />
         <Slade
           open={open}
           items={items}
@@ -75,8 +77,6 @@ class Home extends Component {
           backdrop={backdrop}
           rightArrow={arrow}
         />
-        <Basic openSlade={this.openSlade} />
-        <Customized openSlade={this.openSlade} />
       </Fragment>
     );
   }

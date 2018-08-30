@@ -17,6 +17,7 @@
 * [Installation](#installation)
 * [API Documentation](#api-documentation)
 * [Usage](#usage)
+* [FAQ](#faq)
 
 # Examples
 
@@ -41,7 +42,7 @@ index | `int` | defines which Component is showed when the open become true | `t
 closeSlade | `function` | close active Slade with change the `open` to false | `true`
 nextSlade | `function` | increment current index of Slade | `true`
 previousSlade | `function` | decrement current index of Slade | `true`
-backdrop | `string` | predefined color like `red`, rgba and hsla like `rgba(0,0,0,0.5)`, or image url like `https://example.com/bg.png/` | `false`
+backdrop | `string` | predefined color like `red`, rgb/rgba and hsl/hsla like `rgba(0,0,0,0.5)`, or image url like `https://example.com/bg.png/` | `false`
 rightArrow | `string` | svg component (100 x 60) or image url like `https://example.com/arr.png/`. If you change right arrow, all arrow will automatically changed and got rotated | `false` 
 
 # Usage
@@ -102,9 +103,6 @@ class Home extends Component {
 ```
 
 # FAQ
-Q: Why my Slade not shown?
-
-A: There is bug that you must force you to put Slade component __above__ same parent items (look examples above)
 
 Q: Why when I try to input path to backdrop and arrow not worked `arrow={'./myArrow.svg'}`
 
@@ -114,7 +112,7 @@ Q: Are we still need `media queries` for component that we passed?
 
 A: For best result you must define it by yourself though (i believe in flexibelity)
 
-Q: I think props like `nextSlade` and `previousSlide` is redundant, why not try to remove that item?
+Q: I think props like `nextSlade` and `previousSlade` is redundant, why not try to remove that item?
 
 A: Again, I believe in flexibelity. You can put your extra feature there. For example you can add confetti when user reach end of slade, or you can disable user to change Slade if they not doing something, etc
 

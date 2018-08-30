@@ -19,6 +19,7 @@ var shakeLeft = (0, _styledComponents.keyframes)(_templateObject);
 var shakeRight = (0, _styledComponents.keyframes)(_templateObject2);
 
 var shakeUp = (0, _styledComponents.keyframes)(_templateObject3);
+
 var shakeDown = (0, _styledComponents.keyframes)(_templateObject4);
 
 exports.shakeLeft = shakeLeft;
