@@ -41,8 +41,8 @@ index | `int` | defines which Component is showed when the open become true | `t
 closeSlade | `function` | close active Slade with change the `open` to false | `true`
 nextSlade | `function` | increment current index of Slade | `true`
 previousSlade | `function` | decrement current index of Slade | `true`
-backdrop | `string` | you can put  `red`, `rgba(0,0,0,0.5)` or `https://example.com/bg.png/` | `false`
-rightArrow | `string` | you can put `svg component` (100 x 60) or `https://example.com/arr.png/`, if you change right arrow, all arrow will automatically changed and got rotated | `false` 
+backdrop | `string` | predefined color like `red`, rgba and hsla like `rgba(0,0,0,0.5)`, or image url like `https://example.com/bg.png/` | `false`
+rightArrow | `string` | svg component (100 x 60) or image url like `https://example.com/arr.png/`. If you change right arrow, all arrow will automatically changed and got rotated | `false` 
 
 # Usage
 
@@ -101,7 +101,23 @@ class Home extends Component {
 }
 ```
 
-# Current Problem
-1. You must put Slade component __above__ all items (look examples above)
-2. `backdrop` and `arrow` not support path yet
-3. Dont forget define dimension for you passed component items (media query is important too)
+# FAQ
+Q: Why my Slade not shown?
+
+A: There is bug that you must force you to put Slade component __above__ same parent items (look examples above)
+
+Q: Why when I try to input path to backdrop and arrow not worked `arrow={'./myArrow.svg'}`
+
+A: Ups, sorry this library not supported that feature yet
+
+Q: Are we still need `media queries` for component that we passed?
+
+A: For best result you must define it by yourself though (i believe in flexibelity)
+
+Q: I think props like `nextSlade` and `previousSlide` is redundant, why not try to remove that item?
+
+A: Again, I believe in flexibelity. You can put your extra feature there. For example you can add confetti when user reach end of slade, or you can disable user to change Slade if they not doing something, etc
+
+Q: Who are you?
+
+A: Just a beginner -> intermediate front end developer :D

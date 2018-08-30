@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Row = styled.div`
-  height: ${props => props.height ? props.height : '250px'};
+  height: ${props => (props.height ? props.height : '250px')};
   width: 75%;
   display: flex;
   flex-direction: row;
-  justify-content: ${props => props.center ? 'center' : 'space-between'};
+  justify-content: ${props => (props.center ? 'center' : 'space-between')};
   align-items: center;
   margin-bottom: 25px;
   text-align: center;
@@ -15,9 +15,9 @@ const Row = styled.div`
   }
 
   @media (max-width: 481px) {
-    height: ${props => props.center ? 'initial' : '400px'};
-    margin-bottom: ${props => props.center ? '0' : '25px'};
+    height: ${props => (props.center ? 'initial' : '400px')};
+    margin-bottom: ${props => (props.center ? '0' : '25px')};
   }
-`
+`;
 
 export default Row;

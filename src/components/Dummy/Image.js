@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Img = styled.img`
   height: 500px;
@@ -9,16 +10,16 @@ const Img = styled.img`
   @media (max-width: 361px) {
     height: 250px;
   }
-`
+`;
 
-class Image extends Component {
-  render() {
-    return (
-      <div className="image-dummy">
-        <Img src={this.props.src} alt="Dummy Example" />
-      </div>
-    )
-  }
-}
+const Image = ({ src }) => (
+  <div className="image-dummy">
+    <Img src={src} alt="Dummy Example" />
+  </div>
+);
+
+Image.propTypes = {
+  src: PropTypes.string.isRequired,
+};
 
 export default Image;

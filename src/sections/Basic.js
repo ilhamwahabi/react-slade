@@ -1,6 +1,8 @@
-import React from 'react'
-import Container from '../components/Container'
-import Button from '../components/Button'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import Container from '../components/Container';
+import Button from '../components/Button';
 import Row from '../components/Row';
 import Title from '../components/Title';
 
@@ -11,6 +13,10 @@ const Basic = ({ openSlade }) => (
     </Row>
     <Button onClick={() => openSlade('basic')}>Show Dragon Slade</Button>
   </Container>
-)
+);
 
-export default Basic
+Basic.propTypes = {
+  openSlade: PropTypes.func.isRequired,
+};
+
+export default Basic;

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Card = styled.img`
   width: 200px;
@@ -11,6 +11,6 @@ const Card = styled.img`
   @media (max-width: 481px) {
     width: 100px;
   }
-`
+`;
 
-export default Card
+export default Card;
