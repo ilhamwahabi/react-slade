@@ -16,10 +16,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Arrow = _styledComponents2.default.div(_templateObject, function (props) {
-  return props.start ? _shake.shakeLeft : _shake.shakeRight;
-}, function (props) {
-  return props.start ? _shake.shakeUp : _shake.shakeDown;
+var Arrow = _styledComponents2.default.div(_templateObject, function (_ref) {
+  var start = _ref.start;
+  return start ? _shake.shakeLeft : _shake.shakeRight;
+}, function (_ref2) {
+  var start = _ref2.start;
+  return start ? _shake.shakeUp : _shake.shakeDown;
 });
 
 exports.default = Arrow;

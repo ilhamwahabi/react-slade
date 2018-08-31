@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = styled.button`
  font-size: 15px;
- color: ${props => (props.color ? props.color : '#0091EA')};
+ color: ${({ color }) => (color || '#0091EA')};
  border: none;
  border-radius: 5px;
  cursor: pointer;

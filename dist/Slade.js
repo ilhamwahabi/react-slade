@@ -44,13 +44,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Eksternal Import
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-
-// Internal Import
-
-
-var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
+var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|]).(gif|jp?g|tiff|png)$/i;
 
 var Slade = function (_Component) {
   _inherits(Slade, _Component);
@@ -74,16 +70,22 @@ var Slade = function (_Component) {
       if (!_this.isStartItem(index)) previousSlade();
     }, _this.nextSlade = function (nextSlade, index, items) {
       if (!_this.isEndItem(index, items)) nextSlade();
-    }, _this.renderStartArrow = function (rightArrow, index) {
-      return typeof rightArrow === 'string' && urlRegex.test(rightArrow) ? _react2.default.createElement(_Image2.default, { isStartItem: _this.isStartItem(index), start: 1, src: rightArrow, alt: 'arrow' }) : _react2.default.createElement(
+    }, _this.isEdge = function (index, items, start) {
+      return _this.isStartItem(index) && start === 1 || _this.isEndItem(index, items) && start === 0;
+    }, _this.renderArrow = function (rightArrow, index, items, start) {
+      return typeof rightArrow === 'string' && urlRegex.test(rightArrow) ? _react2.default.createElement(_Image2.default, {
+        isEdge: _this.isEdge(index, items, start),
+        start: start,
+        src: rightArrow,
+        alt: 'arrow'
+      }) : _react2.default.createElement(
         _Svg2.default,
-        { isStartItem: _this.isStartItem(index), start: 1, width: '100', height: '60' },
-        rightArrow
-      );
-    }, _this.renderEndArrow = function (rightArrow, index, items) {
-      return typeof rightArrow === 'string' && urlRegex.test(rightArrow) ? _react2.default.createElement(_Image2.default, { isEndItem: _this.isEndItem(index, items), src: rightArrow, alt: 'arrow' }) : _react2.default.createElement(
-        _Svg2.default,
-        { isEndItem: _this.isEndItem(index, items), width: '100', height: '60' },
+        {
+          isEdge: _this.isEdge(index, items, start),
+          start: start,
+          width: '100',
+          height: '60'
+        },
         rightArrow
       );
     }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -120,7 +122,7 @@ var Slade = function (_Component) {
                 e.stopPropagation();_this2.previousSlade(previousSlade, index);
               }
             },
-            this.renderStartArrow(rightArrow, index)
+            this.renderArrow(rightArrow, index, items, 1)
           ),
           _react2.default.createElement(
             _Dialog2.default,
@@ -137,7 +139,7 @@ var Slade = function (_Component) {
                 e.stopPropagation();_this2.nextSlade(nextSlade, index, items);
               }
             },
-            this.renderEndArrow(rightArrow, index, items)
+            this.renderArrow(rightArrow, index, items, 0)
           )
         )
       );

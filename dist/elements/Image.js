@@ -14,12 +14,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Image = _styledComponents2.default.img(_templateObject, function (props) {
-  return props.isStartItem || props.isEndItem ? 'hidden' : 'visible';
-}, function (props) {
-  return props.start ? 'rotate(180deg)' : 'rotate(0)';
-}, function (props) {
-  return props.start ? 'rotate(-90deg)' : 'rotate(90deg)';
+var Image = _styledComponents2.default.img(_templateObject, function (_ref) {
+  var isEdge = _ref.isEdge;
+  return isEdge ? 'hidden' : 'visible';
+}, function (_ref2) {
+  var start = _ref2.start;
+  return start ? 'rotate(180deg)' : 'rotate(0)';
+}, function (_ref3) {
+  var start = _ref3.start;
+  return start ? 'rotate(-90deg)' : 'rotate(90deg)';
 });
 
 exports.default = Image;

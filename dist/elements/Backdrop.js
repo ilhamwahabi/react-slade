@@ -14,10 +14,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Backdrop = _styledComponents2.default.div(_templateObject, function (props) {
-  return props.open ? 'block' : 'none';
-}, function (props) {
-  return props.backdrop.startsWith('http') ? 'background: url(' + props.backdrop + ') no-repeat center / cover' : 'background: ' + props.backdrop;
+var Backdrop = _styledComponents2.default.div(_templateObject, function (_ref) {
+  var open = _ref.open;
+  return open ? 'block' : 'none';
+}, function (_ref2) {
+  var backdrop = _ref2.backdrop;
+  return backdrop.startsWith('http') ? 'background: url(' + backdrop + ') no-repeat center / cover' : 'background: ' + backdrop;
 });
 
 exports.default = Backdrop;

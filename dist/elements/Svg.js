@@ -14,14 +14,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Svg = _styledComponents2.default.svg(_templateObject, function (props) {
-  return props.isStartItem || props.isEndItem ? 'transparent' : 'white';
-}, function (props) {
-  return props.isStartItem || props.isEndItem ? 'initial' : 'pointer';
-}, function (props) {
-  return props.start ? 'rotate(180deg)' : 'rotate(0)';
-}, function (props) {
-  return props.start ? 'rotate(-90deg)' : 'rotate(90deg)';
+var Svg = _styledComponents2.default.svg(_templateObject, function (_ref) {
+  var isEdge = _ref.isEdge;
+  return isEdge ? 'transparent' : 'white';
+}, function (_ref2) {
+  var isEdge = _ref2.isEdge;
+  return isEdge ? 'initial' : 'pointer';
+}, function (_ref3) {
+  var start = _ref3.start;
+  return start ? 'rotate(180deg)' : 'rotate(0)';
+}, function (_ref4) {
+  var start = _ref4.start;
+  return start ? 'rotate(-90deg)' : 'rotate(90deg)';
 });
 
 exports.default = Svg;

@@ -16,12 +16,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledSlade = _styledComponents2.default.main(_templateObject, function (props) {
-  return props.open ? 200 : -1;
-}, function (props) {
-  return props.open ? 1 : 0;
-}, function (props) {
-  return props.open ? _fade.fadeIn : _fade.fadeOut;
+var StyledSlade = _styledComponents2.default.main(_templateObject, function (_ref) {
+  var open = _ref.open;
+  return open ? 200 : -1;
+}, function (_ref2) {
+  var open = _ref2.open;
+  return open ? 1 : 0;
+}, function (_ref3) {
+  var open = _ref3.open;
+  return open ? _fade.fadeIn : _fade.fadeOut;
 });
 
 exports.default = StyledSlade;
