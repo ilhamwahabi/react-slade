@@ -24,7 +24,6 @@
 [react-slade examples page](https://manuverio.github.io/react-slade/)
 
 <img src="https://media.giphy.com/media/MX3gs3UOJynShcZFho/giphy.gif">
-<img src="https://media.giphy.com/media/E0mqt3sSzV02LuUAc0/giphy.gif" height="230px"> 
 
 # Installation
 
@@ -45,7 +44,7 @@ index | `int` | defines which Component is showed when the open become true | `t
 closeSlade | `function` | close active Slade with change the `open` to false | `true`
 nextSlade | `function` | increment current index of Slade | `true`
 previousSlade | `function` | decrement current index of Slade | `true`
-backdrop | `string` | predefined color like `red`, rgb/rgba and hsl/hsla like `rgba(0,0,0,0.5)`, or image url (gif, jp, jpg, tiff, png) like `https://example.com/bg.png/` | `false`
+backdrop | `string` | predefined color like `red`, rgb/rgba and hsl/hsla like `rgba(0,0,0,0.5)`, or image url like `https://example.com/bg.png/` | `false`
 rightArrow | `string` or `svg` | svg component (100 x 60) or image url like `https://example.com/arr.png/`. If you change right arrow, all arrow will automatically changed and got rotated | `false` 
 
 # Usage
