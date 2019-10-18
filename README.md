@@ -25,6 +25,8 @@
 
 <img src="https://media.giphy.com/media/MX3gs3UOJynShcZFho/giphy.gif">
 
+[you can try live example above here](https://oskm.itb.ac.id/suvenir)
+
 # Installation
 
 To install, you can use [npm](https://www.npmjs.com/package/react-slade) and [yarn](https://yarnpkg.com/en/package/react-slade) :

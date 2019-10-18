@@ -19,14 +19,11 @@
   "scripts": {
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
-    
     "build:lib": "babel lib -d dist",
     "build:lib:watch": "babel lib -w -d dist",
     "prepare": "npm run build:lib",
-
     "example": "webpack-dev-server --open --mode development",
     "build:example": "webpack --mode=production",
-
     "predeploy": "npm run build:lib",
     "deploy": "gh-pages -d build"
   },
