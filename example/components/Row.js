@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Row = styled.div`
-  height: ${({ height }) => (height || '250px')};
+  height: ${({ height }) => height || '250px'};
   width: 75%;
   display: flex;
   flex-direction: row;
