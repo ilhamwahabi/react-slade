@@ -22,12 +22,13 @@
     "prettier:check": "prettier --check '**/*.{js,css,md,json}'",
     "prettier:fix": "prettier --write '**/*.{js,css,md,json}'",
     "fix": "npm run lint:fix && npm run prettier:fix",
+    "check": "npm run lint:check && npm run prettier:check",
     "build:lib": "babel lib -d dist",
     "build:lib:watch": "babel lib -w -d dist",
     "prepare": "npm run build:lib",
     "example": "webpack-dev-server --open --mode development",
     "build:example": "webpack --mode=production",
-    "predeploy": "npm run build:lib",
+    "predeploy": "npm run build:example",
     "deploy": "gh-pages -d build"
   },
   "lint-staged": {
@@ -38,7 +39,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-checkout": "yarnhook",
+      "post-merge": "yarnhook",
+      "post-rewrite": "yarnhook"
     }
   },
   "tags": [
@@ -92,7 +96,8 @@
     "style-loader": "^0.21.0",
     "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "yarnhook": "^0.4.3"
   },
   "dependencies": {
     "styled-components": "^3.3.3"
