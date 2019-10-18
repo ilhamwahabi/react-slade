@@ -36,6 +36,11 @@
       "git add"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "tags": [
     "react",
     "modal",
@@ -74,6 +79,7 @@
     "gh-pages": "^1.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.9",
     "image-webpack-loader": "^4.3.1",
     "jest": "^23.6.0",
     "lint-staged": "^9.4.2",
