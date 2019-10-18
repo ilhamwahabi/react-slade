@@ -1,6 +1,6 @@
 {
   "name": "react-slade",
-  "version": "1.4.18",
+  "version": "1.5.0",
   "description": "React dialog component that slide-able",
   "main": "dist/index.js",
   "author": "Ilham Wahabi",
