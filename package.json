@@ -17,14 +17,17 @@
     "build"
   ],
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode=production",
-    "produce:watch": "babel lib -w -d dist",
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
-    "produce": "babel lib -d dist",
-    "prepare": "npm run produce",
-    "predeploy": "npm run build",
+    
+    "build:lib": "babel lib -d dist",
+    "build:lib:watch": "babel lib -w -d dist",
+    "prepare": "npm run build:lib",
+
+    "example": "webpack-dev-server --open --mode development",
+    "build:example": "webpack --mode=production",
+
+    "predeploy": "npm run build:lib",
     "deploy": "gh-pages -d build"
   },
   "tags": [
